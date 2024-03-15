@@ -1,2 +1,2 @@
 # Country-Capital-Quiz
-a quiz web app using Postgresql database server and using csv file rows data to be randomly fetch column name on country name
+a quiz web app using Postgresql for database,ejs or css files on frontend and nodejs for backend.In this project we were using csv file rows data to be randomly fetch on screen
