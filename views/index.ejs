@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Capital Quiz</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body id="app">
+  <h1>Country Capital Quiz</h1>
+  <div class="container">
+
+  <form action="/submit" method="post">
+    
+    <% if(locals.wasCorrect===false){%>
+      <div id="cross">Oops...Game Over.Try Again</div>
+      <button  class="restart"><a href="/">Restart</a></button>
+      <% } else{%>
+    <div class="horizontal-container">
+      <h3>
+        Total Score:
+        <span id="score">
+          <%= locals.totalScore ? totalScore : "0" %>
+        </span>
+      </h3>
+
+    </div>
+
+    <h2 id="countryName">
+      <%=question.country %>
+    </h2>
+    <div class="answer-container">
+      <input type="text" name="answer" id="userInput" placeholder="Enter the capital" autofocus autocomplete="off">
+
+    </div>
+    
+        <button type="submit" class="submit">SUBMIT </button>
+
+          <% if(locals.wasCorrect){%>
+            <div id="checkmark">well done! you  guess it right ✔</div>
+              <% } %>
+        
+  <% } %>
+  </form>
+</div>
+<script>
+  setTimeout(() => {
+ document.getElementById("checkmark").style.visibility="hidden";
+  
+}, 1000);
+</script>
+</body>
+
+</html>
